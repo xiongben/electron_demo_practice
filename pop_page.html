@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>POP</title>
+    <style>
+        #popBtn{
+            background: paleturquoise;
+            color: black;
+            len-height: 26px;
+        }
+    </style>
+</head>
+<body>
+  <h2>this is popup window</h2>
+  <button id="popBtn">send message to father component</button>
+  <script>
+      var btn = this.document.querySelector("#popBtn")
+      btn.onclick = function (e){
+          e.preventDefault()
+          window.opener.postMessage("the message from the child component")
+          // var url = "https://www.baidu.com"
+          // shell.openExternal(url)
+      }
+  </script>
+</body>
+</html>
