@@ -8,7 +8,11 @@ var mainWindow = null
 
 
 app.on('ready',()=>{
-    mainWindow = new BrowserWindow({width:300,height:300})
+    mainWindow = new BrowserWindow({
+        width:300,
+        height:300,
+        webPreferences:{nodeIntegration:true}
+    })
     mainWindow.loadFile('index.html')
     mainWindow.on('close',()=>{
         mainWindow = null
